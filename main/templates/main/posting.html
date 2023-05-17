@@ -1,0 +1,25 @@
+<html>
+    <head>
+    <title>Posting</title>
+        <style>
+            body { background-color: lightyellow; }
+            h2 { color: navy; text-decoration: underline;}
+            h3 { color: purple;}
+        </style>
+    </head>
+    <body>
+        <h2>page</h2>
+        <h3>제목</h3>{{post.postname}}
+        <h3>내용</h3>{{post.contents}}
+        <p></p>
+
+        <!-- 이미지 보여주기 -->
+        {% if post.mainphoto %}
+            <img src = "{{ post.mainphoto.url }}" alt="" height="300">
+            <br>
+        {% endif %}
+
+        <a href="/blog/">목록</a>
+        <a href="/blog/{{post.pk}}/remove">삭제</a>
+        </body>
+</html>
